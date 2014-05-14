@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Pro</title>
+	<meta content="target-densitydpi=high-dpi,width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1" name="viewport" />
+	<script type="text/javascript" src="tpro.js"></script>
+	<style type="text/css">
+		body {
+			-webkit-user-select : none;
+			max-width: 1024px;
+		}
+		
+		#pro{
+			padding: 3em;
+			border: 2px solid gold;
+		}
+		
+		#btn {
+			width: 90%;
+		}
+	</style>
+</head>
+<body>
+	<h1>手势区域</h1>
+	<ul id="pro">
+		<li>Tap</li>
+		<li>Double Tap</li>
+		<li>Hold</li>
+		<li>SwipeLeft</li>
+		<li>SwipeRight</li>
+		<li>SwipeUp</li>
+		<li>SwipeDown</li>
+		<li>Pinchin</li>
+		<li>Pinchout</li>
+		<li>RotateLeft</li>
+		<li>RotateRight</li>
+		<li>DragLeft</li>
+		<li>DragRight</li>
+		<li>DragUp</li>
+		<li>DragDown</li>
+	</ul>
+	
+	<div id="btn">Events: </div>
+	<script type="text/javascript">
+		
+		var handler = function(e){
+			/*
+			document.getElementById("btn").innerHTML += ("<h3>" + e.type + ":</h3>");
+			for(var x in e.detail){
+				document.getElementById("btn").innerHTML += "<div>"
+				document.getElementById("btn").innerHTML += (x + ":" + e.detail[x]);
+			}
+			document.getElementById("btn").innerHTML += "</div>";
+			*/
+			console.log(e.type, e.detail);
+		}
+		
+		var list = ['tap', 'doubletap', 'hold', 'swipeleft', 'swiperight', 'swipeup', 'swipedown', 'scalein', 'scaleout', 'rotateleft', 'rotateright', 'dragleft', 'dragright', 'dragup', 'dragdown'];
+		touch.on('#pro', list.join(" "), handler);
+		
+	</script>
+</body>
+</html>
